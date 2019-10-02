@@ -18,7 +18,7 @@ public class Addition {
 			
 			soma = num1 + num2;
 			
-			System.out.printf("A soma equivale a %d%n",soma);
+			System.out.printf("A soma equivale a: %d%n",soma);
 	}
 
 }
