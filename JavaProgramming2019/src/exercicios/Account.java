@@ -8,9 +8,10 @@ public class Account {
 	public void setName(String name) {
 		this.name = name; //armazena o nome
 	}
-	
 	// método para recuperar o nome do objeto
 	public String getName() {
 		return name; //retorna valor do nome para o chamador
+		
 	}
+	
 }
