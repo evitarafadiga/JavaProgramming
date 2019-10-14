@@ -1,4 +1,4 @@
-package exercicios;
+package capitulo003;
 
 import javax.swing.JOptionPane;
 
