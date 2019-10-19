@@ -10,6 +10,10 @@ public class ClassAverage {
 		int total = 0;
 		int gradeCounter = 1;
 		
+		System.out.print("Insira a série ou -1 para sair: ");;
+		int grade = input.nextInt();
+		
+		
 		while (gradeCounter <= 10) {
 			
 			System.out.print("Insira a série: ");
