@@ -25,12 +25,25 @@ public class Exercicio53 {
 
 	public static void main(String[] args) {
 		
-		int sum = 1;
-		for (int i = -1; i <= 99; i += 2) {
-		sum += i;
-		System.out.printf("O numero inteiro impar %d%n somado ao restante equivale a %d%n",i,sum);
-			
+		int i = 0;
+		while ( i <20) {
+			i++;
+			System.out.printf("%n%d ",i);
 		}
+			
+		for (int k = 1; k < 20; ++k) {
+			System.out.printf("%n%d ",k);
+		}
+		
+		int sum = 1;
+		for (int j = -1; j <= 99; j += 2) {
+		sum += j;
+		System.out.printf("O numero inteiro impar %d%n somado ao restante equivale a %d%n",i,sum);			
+		}
+		
+		double potencia = Math.pow(2.5, 3);
+		System.out.printf("%nO resultado da potencia equivale a: %f",potencia);
+		
 		
 
 	}
