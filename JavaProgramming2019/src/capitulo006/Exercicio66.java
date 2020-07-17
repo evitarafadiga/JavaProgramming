@@ -2,14 +2,12 @@ package capitulo006;
 
 import java.util.Scanner;
 
-import com.sun.corba.se.spi.orbutil.fsm.Input;
-
 /*
  * 
- * Declare o método sphereVolume para calcular e retornar o volume da esfera. Utilize a seguinte instrução para 
+ * Declare o mï¿½todo sphereVolume para calcular e retornar o volume da esfera. Utilize a seguinte instruï¿½ï¿½o para 
  * calcular o volume: double volume = (4.0 / 3.0) * Math.PI * Math.pow(radius, 3)
  * 
-   Escreva um aplicativo Java que solicita ao usuário o raio do tipo double de uma esfera, chama sphereVolume
+   Escreva um aplicativo Java que solicita ao usuï¿½rio o raio do tipo double de uma esfera, chama sphereVolume
    para calcular o volume e exibe o resultado.
 
  */
