@@ -15,7 +15,7 @@ public class DeckOfCards {
 		String[] suits = { "Copas","Ouros","Paus","Espadas"};
 		
 		deck = new Card[NUMBER_OF_CARDS];//cria array de objetos Card
-		currentCard = 0; //primeira carta distribuída
+		currentCard = 0; // primeira carta distribuída
 		
 		//preenche baralho com objetos Card
 		for (int count = 0; count < deck.length; count++)
