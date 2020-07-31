@@ -6,29 +6,33 @@ import javax.swing.JPanel;
 
 public class DrawSpiral extends JPanel {
 	
-	private Color[] colors =
-		{ Color.WHITE, Color.RED};
+	 public void paintComponent(Graphics g) {
 	
-	public DrawSpiral() {
-		setBackground(Color.WHITE);
-	}
-	
-	public void paintComponent(Graphics g) {
-	super.paintComponent(g);
-		
-	int radius = 10;
-	
-	int centerX = getWidth() / 2;
-	int centerY = getHeight() - 250;
-	int j = 0;
-	
-	for (int counter = colors.length; counter > 0; counter--) {
-		g.setColor(colors[counter -1]);
-			
-			g.fillArc(centerX - counter * radius + j, centerY - counter * radius + j, counter * radius * 2 + j, counter * radius * 2 + j, 200 , 360);
-			j+=2;
-			
-		}
-	}
-
+    int x = getSize().width / 2 - 10;
+    int y = getSize().height/ 2 - 10;
+    int width = 20;
+    int height = 20;
+    int startAngle = 0;
+    int arcAngle = 180;
+    int depth = 7; 
+    
+    for (int i = 0; i < 30; i++) {
+        if (i % 2 == 0) {
+            //   g.drawArc(x + 10, y + 10, width, height, startAngle + 10, -arcAngle);
+            //  x = x - 5;
+            y = y - depth;
+            width = width + 2 * depth;
+            height = height + 2 * depth;
+            g.drawArc(x, y, width, height, startAngle, -arcAngle);
+        } else {
+            //  g.drawArc(x + 10, y + 10, width, height, startAngle + 10, arcAngle);
+            x = x - 2 * depth;
+            y = y - depth;
+            width = width + 2 * depth;
+            height = height + 2 * depth;
+            g.drawArc(x, y, width, height, startAngle, arcAngle);
+     
+        	}
+        }
+    }
 }
