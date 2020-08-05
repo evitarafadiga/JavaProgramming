@@ -11,7 +11,7 @@ o método calculateCharges para determinar a tarifa para cada cliente.
 
 */
 
-public class Questao68 {
+public class Questao608 {
 
 	public static void main(String[] args) {
 		

@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
 
-public class Exercicio78 {
+public class Exercicio708 {
 
 	public static void main(String[] args) {
 		final int ARRAY_SIZE = 6;

@@ -2,7 +2,7 @@ package capitulo007;
 
 import java.security.SecureRandom;
 
-public class Exercicio79 {
+public class Exercicio709 {
 
 	public static void main(String[] args) {
 		final int LINES = 2;

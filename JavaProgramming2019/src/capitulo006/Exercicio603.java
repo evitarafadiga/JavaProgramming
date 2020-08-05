@@ -18,7 +18,7 @@ package capitulo006;
 
  */
 
-public class Exercicio63 {
+public class Exercicio603 {
 
 	public static void main(String[] args) {
 		

@@ -1,6 +1,6 @@
 package capitulo007;
 
-public class Exercicio73 {
+public class Exercicio703 {
 
 	public static void main(String[] args) {
 		final int ARRAY_SIZE = 10;

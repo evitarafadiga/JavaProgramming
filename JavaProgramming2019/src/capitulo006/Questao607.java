@@ -1,6 +1,6 @@
 package capitulo006;
 
-public class Questao67 {
+public class Questao607 {
 
 	public static void main(String[] args) {
 		

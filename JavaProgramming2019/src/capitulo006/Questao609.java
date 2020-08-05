@@ -12,7 +12,7 @@ import java.util.Scanner;
  * Para cada número processado, exiba ambos os números, o original e o arredondado.
  */
 
-public class Questao69 {
+public class Questao609 {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
