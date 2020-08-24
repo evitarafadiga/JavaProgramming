@@ -3,8 +3,6 @@ package capitulo007;
 import java.security.SecureRandom;
 import java.util.Arrays;
 
-import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
-
 public class Exercicio708 {
 
 	public static void main(String[] args) {
