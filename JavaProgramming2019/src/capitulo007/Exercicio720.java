@@ -2,6 +2,8 @@ package capitulo007;
 
 import java.security.SecureRandom;
 
+import com.sun.tools.javac.util.Convert;
+
 public class Exercicio720 {
 
 	public static void main(String[] args) {
@@ -31,15 +33,21 @@ public class Exercicio720 {
 		sales [5][0] = "Sorvete";
 		
 		printArray(sales);
-		System.out.println();
-		sumSales(sales);
+		System.out.println("\n");
+		
+		for (int i = 1; i < PRODUCT_TYPE; i++) {
+				
+				System.out.printf("Vendas totais do produto %s equivalem a %d%n",sales[i][0],sumSales(sales));
+			
+		}
 
 	}
 	
 	public static void printArray (String [][] sales) {
 		for (int i = 0; i < 6; i++) {
 			for (int j = 0; j < 5; j++) {
-				if (j % 5 == 0) System.out.printf("%n");
+				if (j % 5 == 0) 
+					System.out.printf("%n");
 				if (j < 1)
 					System.out.printf(" [%10s] ",sales[i][j]);
 				else
@@ -49,18 +57,24 @@ public class Exercicio720 {
 		}
 	}
 	
-	public static void sumSales (String [][] sales) {
-		double sumVendor = 0.0;
-		for (int i = 1; i < 6; i++) {
-			for (int j = 1; j < 5; j++) {
-				if (j % 5 == 0) System.out.printf("%n");
-				
-				sumVendor = Double.parseDouble(sales[i][j]);
+	public static double sumSales (String [][] numbers) {
+		double total = 0.0;
+		String[] temp = new String[800];
+		
+		for (int i = 1; i < numbers.length; i++) {
+			for (int j = 1; j < numbers.length; j++) {
+				if (j % 5 == 0) 
+					System.out.printf("%n");
+					temp = numbers[i][j].split(".");
+					
+					System.out.printf("%s",temp[i]);
+					
+				total += Double.parseDouble(numbers[i][j]);
 				
 			}
 			
 		}
-		System.out.printf("%f",sumVendor);
+		return total;
 		
 	}
 
