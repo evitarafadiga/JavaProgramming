@@ -2,80 +2,69 @@ package capitulo007;
 
 import java.security.SecureRandom;
 
-import com.sun.tools.javac.util.Convert;
-
 public class Exercicio720 {
 
 	public static void main(String[] args) {
 		SecureRandom rand = new SecureRandom();
-		final int VENDOR = 5;
-		final int PRODUCT_TYPE = 6;
 		
-		String [][] sales = new String [PRODUCT_TYPE][VENDOR];
+		final int PRODUCT_TYPE = 7;
+		final int VENDOR = 6;
 		
-		for (int i = 1; i < PRODUCT_TYPE; i++) {
+		Double [][] sales = new Double [PRODUCT_TYPE][VENDOR];
+		double total = 0.0;
+		
+		for (int i = 0; i < PRODUCT_TYPE; i++) {
 			
-			for (int j = 1; j < VENDOR; j++) {
-				sales [i][j] = rand.nextDouble() + " R$";		
-						
+			for (int j = 0; j < VENDOR; j++) {
+				sales [i][j] = (double) rand.nextInt(50);		
+				total += sales[i][j];
 			}
 		}
-		sales [0][0] = "VENDAS";
-		
-		sales [0][1] = "July";
-		sales [0][2] = "Robert";
-		sales [0][3] = "Vincent";
-		sales [0][4] = "Carmen";
-		sales [1][0] = "Shampoo";
-		sales [2][0] = "Chocolate";
-		sales [3][0] = "DVD";
-		sales [4][0] = "USB Stick";
-		sales [5][0] = "Sorvete";
 		
 		printArray(sales);
 		System.out.println("\n");
-		
-		for (int i = 1; i < PRODUCT_TYPE; i++) {
-				
-				System.out.printf("Vendas totais do produto %s equivalem a %d%n",sales[i][0],sumSales(sales));
-			
-		}
-
+		System.out.printf("Valor TOTAL %f%n",total);
 	}
 	
-	public static void printArray (String [][] sales) {
-		for (int i = 0; i < 6; i++) {
-			for (int j = 0; j < 5; j++) {
-				if (j % 5 == 0) 
+	public static void printArray (Double[][] sales) {
+		
+		for (int i = 0; i < 7; i++) {
+			
+			for (int j = 0; j < 6; j++) {
+				
+				if (j % 7 == 0) 
 					System.out.printf("%n");
-				if (j < 1)
-					System.out.printf(" [%10s] ",sales[i][j]);
+				if (j == 0 && i < 1)
+					System.out.printf(" [%10s ] ","Vendas");
+				if (j == 1 && i < 1)
+					System.out.printf(" [%10s ] ","Jessica");
+				if (j == 2 && i < 1)
+					System.out.printf(" [%10s ] ","Morty");
+				if (j == 3 && i < 1)
+					System.out.printf(" [%10s ] ","Geralt");
+				if (j == 4 && i < 1)
+					System.out.printf(" [%10s ] ","Enola");
+				if (j == 5 && i < 1)
+					System.out.printf(" [%10s ] ","TOTALPROD");
+				if (i == 1 && j < 1)
+					System.out.printf(" [%10s ] ","E-Books");
+				if (i == 2 && j < 1)
+					System.out.printf(" [%10s ] ","USB Stick");
+				if (i == 3 && j < 1)
+					System.out.printf(" [%10s ] ","Server");
+				if (i == 4 && j < 1)
+					System.out.printf(" [%10s ] ","E-Reader");
+				if (i == 5 && j < 1)
+					System.out.printf(" [%10s ] ","Hardware");
+				if (i == 6 && j < 1)
+					System.out.printf(" [%10s ] ","TOTALVEND");
+				
 				else
-				System.out.printf(" [%23s] ",sales[i][j]);
+					if (i > 1 && j > 1)
+				System.out.printf(" [%8s R$] ",sales[i][j]);
 			}
 			
 		}
-	}
-	
-	public static double sumSales (String [][] numbers) {
-		double total = 0.0;
-		String[] temp = new String[800];
-		
-		for (int i = 1; i < numbers.length; i++) {
-			for (int j = 1; j < numbers.length; j++) {
-				if (j % 5 == 0) 
-					System.out.printf("%n");
-					temp = numbers[i][j].split(".");
-					
-					System.out.printf("%s",temp[i]);
-					
-				total += Double.parseDouble(numbers[i][j]);
-				
-			}
-			
-		}
-		return total;
-		
 	}
 
 }
