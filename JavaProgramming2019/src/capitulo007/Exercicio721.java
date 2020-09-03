@@ -106,7 +106,6 @@ public class Exercicio721 {
 				
 				if (turtleStatus == Status.STOP) {
 					printArray(floor);
-					break;
 				}
 			}
 				
