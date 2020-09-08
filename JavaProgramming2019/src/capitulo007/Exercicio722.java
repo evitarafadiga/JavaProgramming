@@ -1,13 +1,12 @@
 package capitulo007;
 
+import java.security.SecureRandom;
+
 public class Exercicio722 {
 
 	public static void main(String[] args) {
 
 		int board[][] = new int[8][8];
-		int currentRow [] = new int [8];
-		int currentColumn [] = new int [8];
-		int moveNumber = 0;
 
 		for (int j = 0; j < board.length; j++) {
 			for (int i = 0; i < board.length; i++) {
@@ -58,8 +57,10 @@ public class Exercicio722 {
 				}
 			}
 		}
-
+		
 		printArray(board);
+		System.out.printf("\n");
+		access(board,board);
 		
 	}
 
@@ -74,6 +75,48 @@ public class Exercicio722 {
 			}
 		}
 
+	}
+	
+	public static void access(int[][] spaces, int chess[][]) {
+		
+		for (int i = 0; i < spaces.length; i++) {
+			for (int j = 0; j < spaces.length; j++) {
+				spaces[i][j] = 0;
+ 			}
+		}
+		
+		SecureRandom rand = new SecureRandom();
+		int op = 0;
+		for (int i = 3; i < spaces.length; i++) {
+			for (int j = 4; j < spaces.length; j++) {
+				
+				
+				op = rand.nextInt(7);
+				
+				switch (op){
+				case 0:
+					if (spaces[i+2][j-1] == 0 && chess[i+2][j-1] < chess[i+1][j-2]) {
+						spaces[i+2][j-1] = 1;
+					}
+					else if (spaces[i+1][j-2] == 0 && chess[i+1][j-2] < chess[i-1][j-2]){
+						spaces[i+1][j-2] = 1;
+					}	
+					break;
+				case 1:
+					if (spaces[i+1][j-2] == 0) {
+						spaces[i+1][j-2] = 1;
+					}
+					else if (spaces[i+1][j-2] == 0){
+						spaces[i-1][j-2] = 1;
+					}		
+					default:
+						break;
+					
+				}
+				
+			}
+		}
+	printArray(spaces);
 	}
 
 }
