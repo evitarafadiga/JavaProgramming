@@ -14,4 +14,12 @@ public class Card {
 		return face + " de " + suit;
 	}
 
+	public String getFace() {
+		return face;
+	}
+
+	public String getSuit() {
+		return suit;
+	}
+
 }

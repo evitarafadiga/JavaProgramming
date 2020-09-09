@@ -4,7 +4,7 @@ public class DeckOfCardsTest {
 
 	public static void main(String[] args) {
 		DeckOfCards myDeckOfCards = new DeckOfCards();
-		myDeckOfCards.shufflle();//coloca cartas em ordem
+		myDeckOfCards.shuffle();//coloca cartas em ordem
 		
 		//imprime
 		for (int i = 1; i <= 52; i++) {

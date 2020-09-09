@@ -15,14 +15,14 @@ public class DeckOfCards {
 		String[] suits = { "Copas","Ouros","Paus","Espadas"};
 		
 		deck = new Card[NUMBER_OF_CARDS];//cria array de objetos Card
-		currentCard = 0; // primeira carta distribuída
+		currentCard = 0; // primeira carta distribuida
 		
 		//preenche baralho com objetos Card
 		for (int count = 0; count < deck.length; count++)
 			deck[count] = new Card(faces[count %13],suits[count/13]);
 	}
 	
-	public void shufflle() {
+	public void shuffle() {
 	currentCard = 0;
 	
 	for (int first = 0; first < deck.length; first++) {
@@ -40,6 +40,39 @@ public class DeckOfCards {
 			return deck[currentCard++];
 		else
 			return null;
+	}
+	
+	public void hasEven() {
+		currentCard = 0;
+		int evens = 0;
+		String evenSuit = "";
+		String evenFace = "";
+		for (int i = 0; i < 5; i++) {
+		Card temp = deck[i];
+		deck[i] = deck[i+1];
+		
+		if (temp.getSuit() == deck[i].getSuit()) {
+			evens++;
+			evenSuit = deck[i].getSuit();
+		}
+		else if (temp.getFace() == deck[i].getFace()){
+			evens++;
+			evenFace = deck[i].getFace();
+		}
+		else {
+			deck [i+1] = temp;
+		}
+		
+		
+		}
+		if (evenSuit != "") {
+			System.out.printf("\nExiste(m) %d par(es) de: %s",evens,evenSuit);
+		}
+		
+		if (evenFace != "") {
+			System.out.printf("\nExiste(m) %d par(es) de: %s",evens,evenFace);
+		}
+		
 	}
 
 }
