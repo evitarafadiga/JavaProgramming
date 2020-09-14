@@ -18,6 +18,13 @@ public class Exercicio730 {
 			
 		myDeckOfCards.hasEven();
 		
+		myDeckOfCards.shuffleFisherYates();
+		System.out.println("\n");
+		for (int i = 1; i <= 5; i++) {
+
+			System.out.printf("%-19s", myDeckOfCards.dealCard());
+
+		}
 	}
 
 }
