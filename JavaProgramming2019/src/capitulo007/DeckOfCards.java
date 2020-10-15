@@ -35,11 +35,17 @@ public class DeckOfCards {
 	}
 
 	public void shuffleFisherYates() {
-		int j = 0;
-		for (int i = deck.length; i < 0; i--) {
-			j = (int) Math.floor(Math.random() * (i + 1));
-			deck[i] = deck[j];
-			deck[j] = deck[i];
+		currentCard = 0;
+
+		for (int i = NUMBER_OF_CARDS; i <= deck.length; i--) {
+			while (i-- > 0) {
+				int j = (int) (Math.random() * (i + 1));
+
+				Card temp = deck[j];
+				deck[j] = deck[i];
+				deck[i] = temp;
+			}
+
 		}
 	}
 
