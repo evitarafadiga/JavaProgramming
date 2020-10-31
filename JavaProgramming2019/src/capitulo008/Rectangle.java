@@ -2,36 +2,40 @@ package capitulo008;
 
 public class Rectangle {
 	
-	private int width = 1;
-	private int	length = 1;
+	private float width;
+	private float length;
 	
-	public void setWidth(int width) {
+	public void setWidth(float width) {
+		if (width < 0.0 || width > 20.0) 
+			throw new IllegalArgumentException("Num. fora de escopo.");
 		this.width = width;
 	}
 
-	public int getLength() {
+	public float getLength() {
 		return length;
 	}
 
-	public void setLength(int length) {
+	public void setLength(float length) {
+		if (length < 0.0 || length > 20.0) 
+			throw new IllegalArgumentException("Num. fora de escopo.");
 		this.length = length;
 	}
 
-	public int getWidth() {
+	public float getWidth() {
 		return width;
 	}
 	
-	public void rectanglePerimeter(int width, int length) {
-		int per = width*2+length*2;
+	public void rectanglePerimeter(float width, float length) {
+		float per = width*2+length*2;
 		
-		System.out.printf("Perimetro do retangulo equivale a: %d%n",per);
+		System.out.printf("Perimetro do retangulo equivale a: %f%n",per);
 		
 	}
 
-	public void rectangleArea(int width, int length) {
-		int are = width * length;
+	public void rectangleArea(float width, float length) {
+		float are = width * length;
 		
-		System.out.printf("Perimetro do retangulo equivale a: %d%n",are);
+		System.out.printf("Area do retangulo equivale a: %f%n",are);
 		
 	}
 
