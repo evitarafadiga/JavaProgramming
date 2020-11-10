@@ -8,17 +8,17 @@ public class Time2 {
 	public Time2()
 
 	{
-		this(0, 0, 0); // invoca o construtor com três argumentos
+		this(0, 0, 0); // invoca o construtor com trï¿½s argumentos
 
 	}
 
 	public Time2(int hour) {
-		this(hour, 0, 0); // invoca o construtor com três argumentos
+		this(hour, 0, 0); // invoca o construtor com trï¿½s argumentos
 
 	}
 
 	public Time2(int hour, int minute) {
-		this(hour, minute, 0); // invoca o construtor com três argumentos
+		this(hour, minute, 0); // invoca o construtor com trï¿½s argumentos
 	}
 
 	// Construtor Time2: hour, minute e second fornecidos
@@ -31,18 +31,7 @@ public class Time2 {
 			throw new IllegalArgumentException("minute must be 0-59");
 		if (second < 0)
 			throw new IllegalArgumentException("second must be bigger than 0");
-		if (second > 3600) {
-			int d = (second / 3600);
-			
-			this.hour = d;
-			
-			if (second > 60 ) {
-				int e = (second / 60);
-				
-				this.minute = e;
-		}
 		
-		}
 		this.hour = hour;
 		this.minute = minute;
 		this.second = second;
@@ -54,7 +43,7 @@ public class Time2 {
 		this(time.getHour(), time.getMinute(), time.getSecond());
 	}
 
-	// Métodos set
+	// Mï¿½todos set
 	// Configura um novo valor de tempo usando hora universal;
 	// valida os dados
 	public void setTime(int hour, int minute, int second) {
@@ -87,23 +76,33 @@ public class Time2 {
 	public void setSecond(int second) {
 		if (second < 0)
 			throw new IllegalArgumentException("second must be 0-59");
-		
 		this.second = second;
 	}
 
-	// Métodos get
-	// obtém valor da hora
+	// Mï¿½todos get
+	// obtï¿½m valor da hora
 	public int getHour() {
 		return hour;
 	}
 
-	// obtém valor dos minutos
+	// obtï¿½m valor dos minutos
 	public int getMinute() {
 		return minute;
 	}
 
-	// obtém valor dos segundos
+	// obtï¿½m valor dos segundos
 	public int getSecond() {
+		
+		if (second > 59) {
+			int horas = second / 3600;
+	        int minutos = (second - (horas * 3600)) / 60;
+	        int segundos = second - (horas * 3600) - (minutos * 60);
+	        
+	        this.hour = horas;
+	        this.minute = minutos;
+	        this.second = segundos;
+			
+		}
 		return second;
 	}
 
@@ -112,7 +111,7 @@ public class Time2 {
 		return String.format("%02d:%02d:%02d", getHour(), getMinute(), getSecond());
 	}
 
-	// converte em String no formato padrão de data/hora (H:MM:SS AM ou PM)
+	// converte em String no formato padrï¿½o de data/hora (H:MM:SS AM ou PM)
 	public String toString() {
 		return String.format("%d:%02d:%02d %s", ((getHour() == 0 || getHour() == 12) ? 12 : getHour() % 12),
 				getMinute(), getSecond(), (getHour() < 12 ? "AM" : "PM"));
