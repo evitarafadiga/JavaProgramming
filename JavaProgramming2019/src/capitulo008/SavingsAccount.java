@@ -11,14 +11,17 @@ public class SavingsAccount {
 		this.SavingsBalance = BigDecimal.valueOf(200.80);
 	}
 	
-	public void calculateMonthlyInterest(BigDecimal SavingsBalance, BigDecimal annualInterestRate) {
+	public String calculateMonthlyInterest(BigDecimal SavingsBalance, BigDecimal annualInterestRate) {
 		BigDecimal months = BigDecimal.valueOf(12.0);
 		SavingsBalance = SavingsBalance.multiply(annualInterestRate);
 		SavingsBalance = SavingsBalance.divide(months);
+		String result = SavingsBalance.toPlainString();
+		return result;
 	}
 	
 	public static void modifyInterestRate(BigDecimal annualInterestRate) {
 		annualInterestRate = BigDecimal.valueOf(200.99);
+		
 	}
 
 	public static BigDecimal getAnnualInterestRate() {
@@ -39,6 +42,8 @@ public class SavingsAccount {
 	
 	public String toString() {
 		return String.format("O balanço atual equivale a: %f%n"
-				+ "A porcentagem de juros equivale a: %f%n", getSavingsBalance(),getAnnualInterestRate());
+				+ "A porcentagem de juros equivale a: %f%n"
+				+ "O calculo de juros por mes equivale a: %f%n"
+				, getSavingsBalance(),getAnnualInterestRate(), calculateMonthlyInterest(SavingsBalance, annualInterestRate));
 	}
 }
