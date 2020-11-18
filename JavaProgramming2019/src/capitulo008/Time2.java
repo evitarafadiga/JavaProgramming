@@ -42,8 +42,40 @@ public class Time2 {
 
 		this(time.getHour(), time.getMinute(), time.getSecond());
 	}
+	
+	public void Tick() {
+		if (second < 59) {
+			this.second += 1;
+		} else {
+			this.second = 0;
+			incrementMinute();
+		}
+		
+		
+		
+	}
+	
+	public void incrementMinute() {
+		if (minute < 59) {
+			this.minute += 1;
+		} else {
+			this.minute = 0;
+			incrementHour();
+		}
+		
+	}
+	
+	public void incrementHour() {
+		if (hour < 23) {
+			this.hour += 1;
+		} else {
+			this.hour = 0;
+		}
+		
+		
+	}
 
-	// M�todos set
+	
 	// Configura um novo valor de tempo usando hora universal;
 	// valida os dados
 	public void setTime(int hour, int minute, int second) {
