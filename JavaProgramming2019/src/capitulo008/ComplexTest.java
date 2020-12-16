@@ -9,7 +9,7 @@ public class ComplexTest {
 		
 		displayEquation("Equacao 1: ", c1);
 		
-		sumComplex(c1, c2);
+		
 	}
 	
 	private static void displayEquation(String header, Complex c) {
