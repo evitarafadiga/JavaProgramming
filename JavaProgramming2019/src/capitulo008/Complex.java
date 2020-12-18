@@ -15,15 +15,24 @@ public class Complex {
 				+ "A parte imaginaria equivale a: %d%n",result,realPart,imaginaryPart);
 	}
 	
-	public void sumComplex( float i, float realPart, float imaginaryPart) {
+	public static double sumReal(float... realPart) {
+		double sum = 0;
+
+		for ( double numbers : realPart) {
+			sum+= numbers;
+		}
+		return sum;
 		
-		double resultReal = 0;
-		double resultImaginary = 0;
+	}
+	
+	public static double sumImaginary( float... imaginaryPart) {
+		double sum = 0;
+
+		for ( double numbers : imaginaryPart) {
+			sum+= numbers;
+		}
+		return sum;
 		
-		resultReal += realPart;
-		resultImaginary += imaginaryPart;
-		
-		double result = resultReal + resultImaginary * (Math.sqrt(i));	
 	}
 	
 	public Complex () {
