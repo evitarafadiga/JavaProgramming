@@ -6,33 +6,14 @@ public class Complex {
 	
 	private float realPart;
 	private float imaginaryPart;
-	private float i = -1f;
+	private float i;
+	private float result;
 	
 	public void calculateComplex(float i, float realPart, float imaginaryPart) {
-		double result = realPart + imaginaryPart * (Math.sqrt(i));	
-		System.out.printf("O resultado da equacao equivale a: %d%n"
-				+ "A parte real equivale a: %d%n"
-				+ "A parte imaginaria equivale a: %d%n",result,realPart,imaginaryPart);
-	}
-	
-	public static double sumReal(float... realPart) {
-		double sum = 0;
-
-		for ( double numbers : realPart) {
-			sum+= numbers;
-		}
-		return sum;
-		
-	}
-	
-	public static double sumImaginary( float... imaginaryPart) {
-		double sum = 0;
-
-		for ( double numbers : imaginaryPart) {
-			sum+= numbers;
-		}
-		return sum;
-		
+		result = (float) (realPart + imaginaryPart * Math.sqrt(i));
+		System.out.printf("A parte real equivale a: %f%n"
+				+ "A parte imaginaria equivale a: %f%n"
+				+ "O resultado da equacao equivale a: %f%n",realPart,imaginaryPart,result);
 	}
 	
 	public Complex () {
@@ -61,6 +42,14 @@ public class Complex {
 	}
 	
 	public String toString() {
-		return String.format("%03f + %03f * sqrt-1%n",getRealPart(), getImaginaryPart());
+		return String.format("%03f + %03f * sqrt(-1)%n",getRealPart(), getImaginaryPart());
+	}
+
+	public float getI() {
+		return i;
+	}
+
+	public void setI(float i) {
+		this.i = i;
 	}
 }
